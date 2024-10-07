@@ -1,4 +1,4 @@
-import mysql.connector
+'''import mysql.connector
 
 conexao = mysql.connector.connect(
                 host = 'localhost',
@@ -7,7 +7,7 @@ conexao = mysql.connector.connect(
                 database = 'aula9'
                 )
 x = conexao.cursor()
-#print(conexao)
+#print(conexao)'''
 
 '''x.execute('create database aula9')
 #mostrar todas as bases de dados -----------------------------------------------
@@ -147,9 +147,9 @@ conexao.commit()
 #trocar nome da coluna -----------------------------------------------------------
 
 x.execute('alter table aluno change column endereco teste varchar(50)')
-conexao.commit()'''
+conexao.commit()
 
 #renomear o nome da tabela -----------------------------------------------------
 
 x.execute('alter table aluno rename pessoa')
-conexao.commit()
+conexao.commit()'''
