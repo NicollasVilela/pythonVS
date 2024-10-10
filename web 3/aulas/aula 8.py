@@ -189,9 +189,64 @@ botao_remover.place(x=10,y=250)
 botao_concluir = Button(j,text='Concluir',command=marcar_concluida)
 botao_concluir.place(x=60,y=250)
 
-
-
-
-
-
 j.mainloop()
+
+'''import tkinter as tk
+from tkinter import messagebox
+
+def process():
+    # Tenta converter os valores de entrada e armazená-los na lista
+    try:
+        # Captura os valores digitados e os converte para float
+        for i in range(4):
+            valor = float(entries[i].get())
+            lista.append(valor)
+        
+        # a) Quantas vezes apareceu o valor 9
+        count_nine = lista.count(9)
+        
+        # b) Em que posição foi digitado o primeiro valor 3
+        pos_three = lista.index(3) if 3 in lista else -1
+        
+        # c) Quais foram os números pares
+        numeros_pares = [num for num in lista if num % 2 == 0]
+
+        # Exibe os resultados em uma caixa de mensagem
+        resultado = f"Quantidade de 9: {count_nine}\n"
+        resultado += f"Posição do primeiro 3: {pos_three}\n"
+        resultado += f"Números pares: {numeros_pares}"
+        
+        messagebox.showinfo("Resultado", resultado)
+    
+    except ValueError:
+        messagebox.showerror("Erro", "Por favor, insira apenas números.")
+    except Exception as e:
+        messagebox.showerror("Erro", str(e))
+
+# Criação da janela principal
+t = tk.Tk()
+t.geometry('400x300')
+t.title('Leitor de Valores')
+
+# Lista para armazenar os valores
+lista = []
+
+# Labels e entradas para os quatro valores
+for i in range(4):
+    label = tk.Label(t, text=f'Insira o {i + 1}º valor:')
+    label.pack(pady=5)
+    entry = tk.Entry(t, width=10)
+    entry.pack(pady=5)
+    entries.append(entry)
+
+# Botão para processar os valores
+btn_process = tk.Button(t, text='Processar', command=process)
+btn_process.pack(pady=10)
+
+# Lista para armazenar as entradas
+entries = []
+
+# Inicia o loop principal
+t.mainloop()
+
+'''
